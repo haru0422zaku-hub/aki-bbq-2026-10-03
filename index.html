@@ -130,18 +130,6 @@ h2{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:8px 0 0;letter-spacing
 .page-top:before{content:"↑";position:absolute;top:7px;font-size:16px;color:var(--accent);font-weight:900}
 .page-top span{margin-top:18px}
 .page-top:hover{transform:translateY(-5px);border-color:rgba(225,161,90,.75);box-shadow:0 17px 34px rgba(10,4,1,.48),0 0 20px rgba(225,161,90,.16)}
-
-.video-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.video-card{background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:22px;padding:14px;box-shadow:var(--shadow);overflow:hidden}
-.video-card video{display:block;width:100%;max-height:560px;object-fit:contain;background:#0b0705;border-radius:14px}
-.video-caption{padding:12px 6px 4px;color:var(--muted);font-size:13px;font-weight:800}
-.video-note{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}
-
-
-@media(max-width:800px){
- .video-grid{grid-template-columns:1fr}
- .video-card video{max-height:none}
-}
 @media(max-width:800px){.page-top{right:14px;bottom:14px;width:62px;height:62px;font-size:9px}.page-top:before{top:5px;font-size:14px}.page-top span{margin-top:15px}}
 
 @media(max-width:800px){
@@ -154,6 +142,17 @@ h2{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:8px 0 0;letter-spacing
  .time-row{grid-template-columns:78px 1fr;gap:12px} .timeline:before{left:51px} .time{font-size:13px} .countdown{padding:60px 10px}.countdown-boxes{gap:4px}.count-colon{font-size:25px}.count-box{padding:15px 4px 12px}.count-value{font-size:clamp(31px,10vw,54px)}
  section{padding:70px 0}
 }
+
+/* ===== Loghouse media section ===== */
+.loghouse-media{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:start}
+.media-card{background:linear-gradient(145deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow);overflow:hidden}
+.media-card video{width:100%;display:block;border-radius:15px;background:#120b07;max-height:620px;object-fit:contain}
+.media-card img{width:100%;height:330px;display:block;border-radius:15px;object-fit:cover;background:#29231d}
+.media-caption{padding:14px 2px 2px}
+.media-caption strong{font-size:17px}
+.media-caption .small{margin-top:3px}
+.loghouse-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+@media(max-width:800px){.loghouse-media{grid-template-columns:1fr}.media-card img{height:280px}.loghouse-photos{grid-template-columns:1fr}.media-card video{max-height:none}}
 </style>
 </head>
 <body>
@@ -185,7 +184,7 @@ h2{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:8px 0 0;letter-spacing
         <a class="jump-btn" href="#gallery"><span>08　フォトギャラリー</span></a>
         <a class="jump-btn" href="#countdown"><span>09　カウントダウン</span></a>
         <a class="jump-btn" href="#notice"><span>10　注意事項</span></a>
-        <a class="jump-btn" href="#videos"><span>11　ログハウスイメージ動画</span></a>
+        <a class="jump-btn" href="#loghouse"><span>11　ログハウスアクセスと内観</span></a>
       </div>
     </div>
   </div>
@@ -292,9 +291,6 @@ h2{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:8px 0 0;letter-spacing
       <div class="card member"><img src="assets/photo9.jpg" alt="おおうち"><div class="member-body"><div class="role">色男</div><div class="name">おおうち</div></div></div>
       <div class="card member"><img src="assets/photo7.jpg" alt="こやま"><div class="member-body"><div class="role">ビールにうるさい</div><div class="name">こやま</div></div></div>
       <div class="card member"><img src="assets/photo8.jpg" alt="りゅうと"><div class="member-body"><div class="role">こいつに酒を飲ませるな</div><div class="name">りゅうと</div></div></div>
-      <div class="card member"><img src="assets/photo11.jpeg" alt="あみか"><div class="member-body"><div class="role">ログハウスのオーナー</div><div class="name">あみか</div></div></div>
-      <div class="card member"><img src="assets/photo12.jpeg" alt="れいな"><div class="member-body"><div class="role">モモンガの文句は俺に言え</div><div class="name">れいな</div></div></div>
-      <div class="card member"><img src="assets/photo13.jpeg" alt="？？？"><div class="member-body"><div class="role">うちゅうからおじゃまします</div><div class="name">？？？</div></div></div>
     </div>
   </div>
 </section>
@@ -341,37 +337,33 @@ h2{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:8px 0 0;letter-spacing
       <div class="small">あべ携帯</div>
       <hr style="border:0;border-top:1px solid var(--line);margin:22px 0">
       <p>川遊びをする場合は、水着・サンダルなど濡れてもよい装備を準備してください。天候や現地状況によって予定が変更になる場合があります。飲酒後の川遊び・危険な行動は避け、安全第一で楽しみましょう。</p>
-      <hr style="border:0;border-top:1px solid var(--line);margin:22px 0">
-      <p><strong>これらはあべが用意します</strong></p>
-      <ul class="list stagger" style="margin-top:10px">
-        <li>BBQコンロ</li>
-        <li>炭</li>
-        <li>着火剤・ライター</li>
-        <li>紙皿・紙コップ</li>
-        <li>割りばし</li>
-        <li>軍手</li>
-        <li>ウェットティッシュ・キッチンペーパー</li>
-        <li>トング</li>
-        <li>ビニール袋</li>
-        <li>クーラーボックス</li>
-        <li>洗剤</li>
-      </ul>
     </div>
   </div>
 </section>
 
-<section id="videos">
+<section id="loghouse">
   <div class="container">
-    <div class="section-head reveal"><div><div class="eyebrow">11 / LOG HOUSE VIDEO</div><h2>ログハウスイメージ動画</h2><p class="lead">当日泊まるログハウスのイメージ動画です。すべて音声なしで再生できます。</p></div></div>
-    <div class="video-grid stagger">
-      <div class="video-card reveal"><video controls playsinline muted preload="metadata"><source src="assets/videos/video2.mp4" type="video/mp4">お使いのブラウザでは動画を再生できません。</video><div class="video-caption">ログハウスアクセス</div></div>
-      <div class="video-card reveal"><video controls playsinline muted preload="metadata"><source src="assets/videos/video3.mp4" type="video/mp4">お使いのブラウザでは動画を再生できません。</video><div class="video-caption">リビング</div></div>
-      <div class="video-card reveal"><video controls playsinline muted preload="metadata"><source src="assets/videos/video4.mp4" type="video/mp4">お使いのブラウザでは動画を再生できません。</video><div class="video-caption">宴会場</div></div>
-      <div class="video-card reveal"><video controls playsinline muted preload="metadata"><source src="assets/videos/video1.mp4" type="video/mp4">お使いのブラウザでは動画を再生できません。</video><div class="video-caption">洗面所+お風呂場</div></div>
+    <div class="section-head reveal"><div><div class="eyebrow">11 / LOGHOUSE</div><h2>ログハウスアクセスと内観</h2><p class="lead">ログハウスへのアクセスと、実際の建物・室内の雰囲気を写真と動画で紹介します。</p></div></div>
+    <div class="loghouse-media">
+      <div class="media-card reveal">
+        <video controls playsinline webkit-playsinline preload="metadata" muted aria-label="ログハウスイメージ動画">
+          <source src="assets/loghouse-video.mp4" type="video/mp4">
+          お使いのブラウザでは動画を再生できません。
+        </video>
+        <div class="media-caption"><strong>🎬 ログハウスイメージ動画</strong><div class="small">音声なし・iPhoneでも再生しやすい形式にしています。</div></div>
+      </div>
     </div>
-    <div class="video-note">※ 動画ファイルから音声トラックを削除しているため、音声は流れません。</div>
+    <div class="loghouse-photos stagger">
+      <div class="media-card"><img src="assets/loghouse01.jpeg" alt="ログハウスのリビング" loading="lazy"><div class="media-caption"><strong>🛋 リビング</strong></div></div>
+      <div class="media-card"><img src="assets/loghouse02.jpeg" alt="ログハウスへのアクセス" loading="lazy"><div class="media-caption"><strong>🚗 ログハウスアクセス</strong></div></div>
+      <div class="media-card"><img src="assets/loghouse03.jpeg" alt="ログハウス内観" loading="lazy"><div class="media-caption"><strong>🏠 ログハウス内観</strong></div></div>
+      <div class="media-card"><img src="assets/loghouse04.jpeg" alt="ログハウスの洗面所" loading="lazy"><div class="media-caption"><strong>🪥 洗面所</strong></div></div>
+      <div class="media-card"><img src="assets/loghouse05.jpeg" alt="ログハウスのお風呂場" loading="lazy"><div class="media-caption"><strong>🛁 お風呂場</strong></div></div>
+      <div class="media-card"><img src="assets/loghouse06.jpeg" alt="ログハウス外観" loading="lazy"><div class="media-caption"><strong>🌲 ログハウス外観</strong></div></div>
+    </div>
   </div>
 </section>
+
 </main>
 
 <footer class="footer">
